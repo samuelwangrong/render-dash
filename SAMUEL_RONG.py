@@ -49,10 +49,8 @@ winning_countries.remove("West Germany")
 with urllib.request.urlopen("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json") as url:
     geojson = json.loads(url.read().decode())
 
-# Initialize the Dash app
 app = Dash(__name__)
-
-# Convert the FIFA data to a DataFrame
+server=app.server
 df = pd.DataFrame(fifa_data)
 
 app.layout = html.Div([
